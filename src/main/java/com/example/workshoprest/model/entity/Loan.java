@@ -20,16 +20,16 @@ public class Loan {
     private LocalDate loanDate;
     private boolean terminate;
 
-    @OneToOne(
+    @ManyToOne(
             cascade = {CascadeType.DETACH,CascadeType.REFRESH},
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     @JoinColumn(name = "fk_library_user_id")
     private LibraryUser loanTaker;
 
-    @OneToOne(
+    @ManyToOne(
             cascade = {CascadeType.DETACH,CascadeType.REFRESH},
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     @JoinColumn(name = "fk_book_id")
     private Book book;
