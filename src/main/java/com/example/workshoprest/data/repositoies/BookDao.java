@@ -9,5 +9,5 @@ public interface BookDao extends JpaRepository<Book, String> {
 
     List<Book> findAllByReserved(boolean reserved);
     List<Book> findAllByAvailable(boolean available);
-    Book findByTitle(String title);
+    List<Book> findAllByTitle(String title);
 }
